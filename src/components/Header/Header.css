@@ -1,0 +1,158 @@
+/* Contenedor del header con fondo degradado dinámico y sombra */
+header {
+  background: linear-gradient(135deg, #2c3e50, #1abc9c);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+  font-family: "Arial", sans-serif;
+  position: relative;
+}
+
+/* Contenedor interno para alinear logo y menú */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo: imagen circular y texto a la derecha */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1);
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Icono del menú: moderno y animado */
+.menu-icono {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+}
+.menu-icono:hover {
+  transform: scale(1.2);
+}
+
+/* Menú para pantallas grandes */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu ul li a {
+  background-color: rgba(26, 188, 156, 0.8);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.menu ul li a:hover {
+  background-color: rgba(22, 160, 133, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Botón para cerrar el menú en móvil */
+.cerrar-menu {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(26, 188, 156, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+.cerrar-menu:hover {
+  background-color: rgba(22, 160, 133, 0.9);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .menu-icono {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #1abc9c);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 40px;
+  }
+
+  .menu.abierto {
+    right: 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .menu ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu ul li a {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .cerrar-menu {
+    display: block;
+  }
+}
+
+/* Estilo para pantallas grandes (oculta botón cerrar y menú fijo) */
+@media (min-width: 769px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .cerrar-menu {
+    display: none;
+  }
+}

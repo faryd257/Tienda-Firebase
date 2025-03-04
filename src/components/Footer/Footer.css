@@ -1,0 +1,60 @@
+.my-footer {
+  background: linear-gradient(135deg, #343a40, #1a1a1a); /* Fondo degradado para dinamismo */
+  color: #ffffff;
+  padding: 1.5rem 0; /* Más espacio para un look más "relleno" */
+  margin-top: 0;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.developer-info {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.rights-info {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dev-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dev-link:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .developer-info {
+    font-size: 1rem;
+  }
+
+  .rights-info {
+    font-size: 0.9rem;
+  }
+}

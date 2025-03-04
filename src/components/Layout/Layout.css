@@ -1,0 +1,8 @@
+main {
+    background-color: rgba(139, 202, 190, 0.8);
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
