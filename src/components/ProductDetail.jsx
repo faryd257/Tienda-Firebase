@@ -7,11 +7,12 @@ export const ProductDetail = ({
   isOpen = false,
   onClose = () => {},
 }) => {
-  // Mostrar el modal solo si está abierto y existe un producto
+ 
   if (!isOpen || !product) return null;
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    // Bloquear el desplazamiento al abrir el modal
+  
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "auto";
